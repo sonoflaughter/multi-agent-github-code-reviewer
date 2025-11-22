@@ -26,12 +26,12 @@ flowchart LR
   subgraph Tools
     GH[GitHub API]
     CI[CI/CD Runner]
-    VD[Vector DB (docs & context)]
+    VD[Vector DB]
     TS[Testing Sandbox]
     S3[Artifact Storage]
   end
 
-  U -->|request: "fix bug" / "review PR"| P
+  U -->|request: fix bug / review PR| P
   P -->|assign task| C
   C -->|create branch & PR| GH
   GH -->|webhook: PR opened| R
