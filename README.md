@@ -140,8 +140,14 @@ docker compose up -d
 uvicorn app.main:app --reload
 ```
 
-6. Configure GitHub webhook pointing to `/webhook/github` on your dev server and ensure `GITHUB_TOKEN` has repo scope.
+6. Configure GitHub webhook pointing to `/webhook/github` on your dev server.
 
+### GitHub Token / Permissions
+
+- Respository (aka. repo)
+  - Contents (Read & Write)
+  - Pull requests (Read & Write)
+  - Issues or Pull request reviews (Read & Write)
 ---
 
 ## Example: Opening a Review Request (HTTP)
@@ -283,11 +289,3 @@ Please follow the coding style defined in `.editorconfig` and run linters before
 ## License
 
 MIT — see LICENSE file.
-
----
-
-If you'd like, I can also generate:
-
-* A PNG/SVG of the diagram (Mermaid -> image)
-* A ready-to-drop GitHub Actions workflow to deploy the agent service
-* A short demo script or recorded demo steps to show during interviews

@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+httpx
+pydantic
+pytest
+pytest-asyncio
+pydantic-settings
+python-dotenv
+aiofiles

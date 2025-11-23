@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  vector-db-mock:
+    image: alpine
+    command: ["sh", "-c", "while true; do sleep 3600; done"]
+    container_name: vector-db-mock
+  ci-runner-mock:
+    image: alpine
+    command: ["sh", "-c", "while true; do sleep 3600; done"]
+    container_name: ci-runner-mock
