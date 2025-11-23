@@ -3,6 +3,9 @@ on: [push, pull_request]
 jobs:
   build-test:
     runs-on: ubuntu-latest
+    env:
+      # Ensure Python can import the local `app` package during pytest runs
+      PYTHONPATH: ${{ github.workspace }}
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python
