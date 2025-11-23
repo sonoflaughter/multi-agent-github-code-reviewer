@@ -1,4 +1,9 @@
-from pydantic import BaseSettings
+try:
+    # pydantic v2 splits BaseSettings into pydantic-settings
+    from pydantic_settings import BaseSettings
+except Exception:
+    from pydantic import BaseSettings
+
 
 class Settings(BaseSettings):
     github_token: str
