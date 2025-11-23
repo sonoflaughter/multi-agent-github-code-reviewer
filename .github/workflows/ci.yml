@@ -6,6 +6,13 @@ jobs:
     env:
       # Ensure Python can import the local `app` package during pytest runs
       PYTHONPATH: ${{ github.workspace }}
+      GITHUB_TOKEN: ${{ github.token }}
+      GITHUB_REPO: ${{ github.repository }}
+      HOST: 0.0.0.0
+      PORT: 8000
+      VECTOR_DB_URL: http://localhost:8001
+      CI_RUNNER_URL: http://localhost:9000
+      S3_BUCKET: agent-artifacts
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python
