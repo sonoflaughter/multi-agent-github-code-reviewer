@@ -4,6 +4,12 @@ try:
 except Exception:
     from pydantic import BaseSettings
 
+try:
+    # ConfigDict is available in pydantic v2
+    from pydantic import ConfigDict
+except Exception:
+    ConfigDict = dict
+
 
 class Settings(BaseSettings):
     github_token: str
@@ -13,7 +19,8 @@ class Settings(BaseSettings):
     vector_db_url: str | None = None
     ci_runner_url: str | None = None
 
-    class Config:
-        env_file = ".env"
+    # Allow extra env vars (tests/CI may set additional vars like S3_BUCKET)
+    model_config = ConfigDict(env_file=".env", extra="allow")
+
 
 settings = Settings()
