@@ -3,5 +3,6 @@ uvicorn[standard]
 httpx
 pydantic
 pytest
+pytest-asyncio
 python-dotenv
 aiofiles
